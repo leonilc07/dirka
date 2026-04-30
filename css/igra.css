@@ -1,0 +1,261 @@
+/* ============================================
+   DICE RACE — igra.php stil
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a0d00;
+    background-image: url('../img/backround.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+}
+
+/* ===== NASLOV ===== */
+.naslov {
+    font-size: 36px;
+    font-weight: 900;
+    font-style: italic;
+    color: #ff6a00;
+    text-shadow: 2px 2px 0px #000, 0 0 30px rgba(255, 106, 0, 0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* ===== INFO VRSTICA (katera runda) ===== */
+.runda-info {
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.runda-info span {
+    color: #ff6a00;
+    font-weight: bold;
+}
+
+/* ===== ZUNANJA KARTICA ===== */
+.kartica {
+    background-color: rgba(15, 8, 0, 0.93);
+    border: 2px solid #ff6a00;
+    border-radius: 10px;
+    padding: 32px;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow:
+        0 0 18px rgba(255, 106, 0, 0.6),
+        0 0 50px rgba(255, 106, 0, 0.2),
+        inset 0 0 30px rgba(255, 106, 0, 0.04);
+}
+
+/* ===== 3 STOLPCI ZA IGRALCE ===== */
+.stolpci {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.stolpec {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ===== SKUPNE TOCKE NAD PROGO ===== */
+.skupne-tocke {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 900;
+    color: #ff6a00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skupne-tocke span {
+    color: #ffffff;
+}
+
+/* ===== PROGA ===== */
+.proga-okvir {
+    position: relative;
+    height: 90px;
+    background-color: rgba(8, 4, 0, 0.85);
+    border: 1px solid #3d1f00;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Oranžna cesta */
+.cesta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background-color: #ff6a00;
+}
+
+/* Ciljne belo-crne crte na desni */
+.cilj {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    background: repeating-linear-gradient(
+        180deg,
+        #000 0px,
+        #000 8px,
+        #fff 8px,
+        #fff 16px
+    );
+    z-index: 3;
+}
+
+/* Avto — slika ki se premika po progi */
+.avto {
+    position: absolute;
+    bottom: 20px;
+    left: 2%;
+    width: 100px;
+    height: 56px;
+    z-index: 2;
+    transition: left 0.8s ease;
+}
+
+/* Slika avta — polna sirina bloka */
+.avto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+/* ===== IME IGRALCA + ZGODOVINA RUND ===== */
+.info-blok {
+    background-color: rgba(8, 4, 0, 0.85);
+    border: 1px solid #3d1f00;
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.ime-igralca {
+    font-size: 16px;
+    font-weight: 900;
+    font-style: italic;
+    color: #ff6a00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+/* Tabela zgodovine rund */
+.zgodovina {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.zgodovina tr td {
+    font-size: 13px;
+    color: #cccccc;
+    padding: 3px 0;
+    border-bottom: 1px solid #1a0d00;
+}
+
+.zgodovina tr td:first-child {
+    color: #999;
+    width: 70px;
+}
+
+.zgodovina tr td:last-child {
+    color: #ff6a00;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* ===== KOCKARSKI KVADRAT ===== */
+.kocke-blok {
+    background-color: #000000;
+    border: 2px solid #3d1f00;
+    border-radius: 8px;
+    padding: 16px;
+    min-height: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Posamezna kocka — GIF slika */
+.kocka-slika {
+    width: 56px;
+    height: 56px;
+}
+
+/* Tekst ko kocke se niso se vrtele */
+.kocke-cakanje {
+    font-size: 13px;
+    color: #444;
+    text-align: center;
+}
+
+/* ===== GUMB ===== */
+.gumb-vrstica {
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.gumb {
+    background-color: #ff6a00;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 48px;
+    font-size: 16px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+
+.gumb:hover {
+    background-color: #ff8c00;
+    box-shadow: 0 0 14px rgba(255, 106, 0, 0.6);
+}
+
+.gumb:active {
+    transform: scale(0.98);
+}
+
+.gumb.konec {
+    background-color: #228833;
+}
+
+.gumb.konec:hover {
+    background-color: #33aa44;
+    box-shadow: 0 0 14px rgba(50, 180, 80, 0.6);
+}
