@@ -1,12 +1,6 @@
 <?php
-// ============================================
-// DICE RACE — Stran 2: Dirka
-// ============================================
 session_start();
 
-// --------------------------------------------------
-// 1. PRIHOD IZ index.php (prva krat — POST podatki)
-// --------------------------------------------------
 if (isset($_POST['ime1'])) {
 
     if (empty(trim($_POST['ime1'])) || empty(trim($_POST['ime2'])) || empty(trim($_POST['ime3']))) {
@@ -35,14 +29,10 @@ if (isset($_POST['ime1'])) {
     $_SESSION['zadnje_kocke3']  = array();
 }
 
-// --------------------------------------------------
-// 2. PRITISK NA GUMB "VRZI RUNDO"
-// --------------------------------------------------
 if (isset($_POST['vrzi'])) {
 
     $kocke = $_SESSION['kocke'];
 
-    // Igralec 1
     $vsota1 = 0;
     $meti1  = array();
     for ($k = 0; $k < $kocke; $k++) {
@@ -54,7 +44,6 @@ if (isset($_POST['vrzi'])) {
     $_SESSION['zadnje_kocke1'] = $meti1;
     $_SESSION['zgodovina1'][]  = array('tocke' => $vsota1, 'kocke' => $meti1);
 
-    // Igralec 2
     $vsota2 = 0;
     $meti2  = array();
     for ($k = 0; $k < $kocke; $k++) {
@@ -66,7 +55,6 @@ if (isset($_POST['vrzi'])) {
     $_SESSION['zadnje_kocke2'] = $meti2;
     $_SESSION['zgodovina2'][]  = array('tocke' => $vsota2, 'kocke' => $meti2);
 
-    // Igralec 3
     $vsota3 = 0;
     $meti3  = array();
     for ($k = 0; $k < $kocke; $k++) {
@@ -81,9 +69,6 @@ if (isset($_POST['vrzi'])) {
     $_SESSION['trenutna_runda']++;
 }
 
-// --------------------------------------------------
-// 3. PREBERI IZ SEJE
-// --------------------------------------------------
 $ime1   = $_SESSION['ime1'];
 $ime2   = $_SESSION['ime2'];
 $ime3   = $_SESSION['ime3'];
@@ -96,7 +81,6 @@ $trenutna_runda = $_SESSION['trenutna_runda'];
 
 $max_tocke = $runde * $kocke * 6;
 
-// Izracunaj pozicijo avta v % (2% = start, 78% = tik pred ciljem)
 function pozicija($tocke, $max_tocke) {
     if ($max_tocke == 0) { return 2; }
     $p = ($tocke / $max_tocke) * 76;
@@ -136,7 +120,6 @@ $igra_koncana = ($trenutna_runda > $runde);
 
         <div class="stolpci">
 
-            <!-- ===== STOLPEC 1 ===== -->
             <div class="stolpec">
 
                 <div class="skupne-tocke">
@@ -176,7 +159,6 @@ $igra_koncana = ($trenutna_runda > $runde);
 
             </div>
 
-            <!-- ===== STOLPEC 2 ===== -->
             <div class="stolpec">
 
                 <div class="skupne-tocke">
@@ -185,7 +167,6 @@ $igra_koncana = ($trenutna_runda > $runde);
 
                 <div class="proga-okvir">
                     <div class="cilj"></div>
-                    <!-- Avto 2 — slika car2.png -->
                     <div class="avto"  style="left: <?php echo $poz2; ?>%">
                         <img src="img/car2.png" alt="Avto 2">
                     </div>
@@ -216,7 +197,6 @@ $igra_koncana = ($trenutna_runda > $runde);
 
             </div>
 
-            <!-- ===== STOLPEC 3 ===== -->
             <div class="stolpec">
 
                 <div class="skupne-tocke">
@@ -258,7 +238,6 @@ $igra_koncana = ($trenutna_runda > $runde);
 
         </div>
 
-        <!-- GUMB -->
         <div class="gumb-vrstica">
             <?php if ($igra_koncana): ?>
                 <a href="rezultati.php" class="gumb konec">Poglej rezultate</a>

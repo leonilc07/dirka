@@ -1,10 +1,4 @@
 <?php
-// ============================================
-// DICE RACE — Stran 1: Nastavitve igre
-// ============================================
-// Ta stran nima seje — samo zbere podatke
-// in jih pošlje na igra.php z metodo POST.
-// ============================================
 ?>
 <!DOCTYPE html>
 <html lang="sl">
@@ -17,32 +11,26 @@
 </head>
 <body>
 
-    <!-- LAS VEGAS LOGOTIP -->
     <div class="logo-wrapper">
-        <!--
-            Ko imaš sliko logotipa, zamenjaj spodnje z:
-            <img src="img/logo.png" alt="Las Vegas">
-        -->
         <div class="logo-text">DICE RACE</div>
     </div>
 
-    <!-- GLAVNA KARTICA -->
+
     <div class="kartica">
 
-        <!-- PRIKAZ NAPAKE (ko manjka ime) -->
+
         <?php if (isset($_GET['napaka'])): ?>
             <div class="napaka">
                 Vsa tri imena igralcev morajo biti izpolnjena!
             </div>
         <?php endif; ?>
 
-        <!-- FORMA — pošlje podatke na igra.php -->
         <form action="igra.php" method="POST">
 
-            <!-- VRSTICA: 3 IGRALCI -->
+
             <div class="igralci-vrstica">
 
-                <!-- Igralec 1 -->
+
                 <div class="igralec-blok">
                     <h3>Igralec 1</h3>
                     <label for="ime1">Ime</label>
@@ -56,7 +44,6 @@
                     >
                 </div>
 
-                <!-- Igralec 2 -->
                 <div class="igralec-blok">
                     <h3>Igralec 2</h3>
                     <label for="ime2">Ime</label>
@@ -70,7 +57,6 @@
                     >
                 </div>
 
-                <!-- Igralec 3 -->
                 <div class="igralec-blok">
                     <h3>Igralec 3</h3>
                     <label for="ime3">Ime</label>
@@ -86,18 +72,14 @@
 
             </div>
 
-            <!-- NASLOV NASTAVITVE -->
             <h3 class="nastavitve-naslov">Nastavitve igre</h3>
 
-            <!-- VRSTICA: NASTAVITVE -->
             <div class="nastavitve-vrstica">
 
-                <!-- Število kock (dropdown) -->
                 <div class="nastavitev-blok">
                     <label for="kocke">Število kock za vse igralce</label>
                     <select id="kocke" name="kocke" class="vnosno-polje">
                         <?php
-                        // Naredi možnosti od 1 do 6
                         for ($i = 1; $i <= 6; $i++) {
                             $izbrano = ($i == 3) ? 'selected' : '';
                             echo '<option value="' . $i . '" ' . $izbrano . '>' . $i . '</option>';
@@ -106,7 +88,6 @@
                     </select>
                 </div>
 
-                <!-- Število rund (ročni vnos) -->
                 <div class="nastavitev-blok">
                     <label for="runde">Število rund za vse igralce</label>
                     <input
@@ -122,15 +103,12 @@
 
             </div>
 
-            <!-- GUMBI -->
             <div class="gumbi-vrstica">
 
-                <!-- Levo: Začni igro -->
                 <button type="submit" class="gumb">
                     ZAČNI IGRO
                 </button>
 
-                <!-- Desno: Navodila + Vizitka -->
                 <div class="gumbi-desno">
                     <button type="button" id="gumb-navodila" class="gumb">
                         NAVODILA

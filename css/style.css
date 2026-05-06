@@ -1,7 +1,3 @@
-/* ============================================
-   DICE RACE — Hot Wheels stil
-   ============================================ */
-
 * {
     margin: 0;
     padding: 0;
@@ -23,15 +19,6 @@ body {
     padding: 32px 16px;
 }
 
-/* ===== LOGOTIP ZGORAJ ===== */
-.logo-wrapper {
-    margin-bottom: 24px;
-    text-align: center;
-}
-
-.logo-wrapper img {
-    height: 120px;
-}
 
 .logo-text {
     font-size: 48px;
@@ -45,7 +32,6 @@ body {
     text-transform: uppercase;
 }
 
-/* ===== GLAVNA KARTICA ===== */
 .kartica {
     background-color: rgba(15, 8, 0, 0.93);
     border: 2px solid #ff6a00;
@@ -59,7 +45,6 @@ body {
         inset 0 0 30px rgba(255, 106, 0, 0.04);
 }
 
-/* ===== VRSTICA IGRALCI ===== */
 .igralci-vrstica {
     display: flex;
     gap: 20px;
@@ -91,7 +76,6 @@ body {
     margin-bottom: 6px;
 }
 
-/* ===== VNOSNA POLJA ===== */
 .vnosno-polje {
     width: 100%;
     background-color: #120800;
@@ -115,7 +99,6 @@ body {
     box-shadow: 0 0 8px rgba(255, 106, 0, 0.4);
 }
 
-/* ===== NASTAVITVE ===== */
 .nastavitve-naslov {
     color: #f0f0f0;
     font-size: 15px;
@@ -154,7 +137,6 @@ select.vnosno-polje option {
     color: #f0f0f0;
 }
 
-/* ===== GUMBI ===== */
 .gumbi-vrstica {
     display: flex;
     justify-content: space-between;
@@ -195,7 +177,6 @@ select.vnosno-polje option {
 }
 
 
-/* ===== NAPAKA ===== */
 .napaka {
     background-color: rgba(100, 30, 0, 0.5);
     border: 1px solid #ff6a00;
@@ -207,7 +188,6 @@ select.vnosno-polje option {
     text-align: center;
 }
 
-/* ===== ODZIVNOST ===== */
 @media (max-width: 700px) {
     .igralci-vrstica { flex-direction: column; }
     .nastavitve-vrstica { grid-template-columns: 1fr; }

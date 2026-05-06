@@ -1,6 +1,3 @@
-/* ============================================
-   DICE RACE — rezultati.php stil
-   ============================================ */
 
 * {
     margin: 0;
@@ -21,7 +18,6 @@ body {
     position: relative;
 }
 
-/* ===== CANVAS ZA PETARDE (JS) ===== */
 #petarde {
     position: fixed;
     top: 0;
@@ -32,7 +28,6 @@ body {
     z-index: 10;
 }
 
-/* ===== NASLOV ZGORAJ ===== */
 .naslov {
     position: absolute;
     top: 20px;
@@ -49,7 +44,6 @@ body {
     z-index: 20;
 }
 
-/* ===== SKUPNI WRAPPER ZA VSE 3 POZICIJE ===== */
 .pozicije {
     position: absolute;
     top: 0;
@@ -59,9 +53,6 @@ body {
     z-index: 20;
 }
 
-/* ===== POSAMEZNA POZICIJA ===== */
-/* Vsaka pozicija je absolutno postavljena nad pravo stopnico */
-
 .pozicija {
     position: absolute;
     display: flex;
@@ -70,13 +61,11 @@ body {
     gap: 6px;
 }
 
-/* Avto slika nad stopnico */
 .pozicija img.avto {
     width: 130px;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8));
 }
 
-/* Ime igralca */
 .pozicija .ime {
     font-size: 20px;
     font-weight: 900;
@@ -88,7 +77,6 @@ body {
     white-space: nowrap;
 }
 
-/* Točke */
 .pozicija .tocke {
     font-size: 15px;
     font-weight: 900;
@@ -97,7 +85,6 @@ body {
     white-space: nowrap;
 }
 
-/* ===== 1. MESTO — sredina, višje ===== */
 .mesto-1 {
     left: 38%;
     bottom: 46%;
@@ -119,21 +106,18 @@ body {
     color: #ffcc00;
 }
 
-/* ===== 2. MESTO — levo ===== */
 .mesto-2 {
     left: 18%;
     bottom: 39%;
     transform: translateX(-50%);
 }
 
-/* ===== 3. MESTO — desno ===== */
 .mesto-3 {
     left: 72%;
     bottom: 37%;
     transform: translateX(-50%);
 }
 
-/* ===== GUMB IGRAJ ZNOVA ===== */
 .gumb-wrapper {
     position: absolute;
     bottom: 24px;
