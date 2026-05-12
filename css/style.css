@@ -25,9 +25,6 @@ body {
     font-weight: 900;
     font-style: italic;
     color: #ff6a00;
-    text-shadow:
-        2px 2px 0px #000,
-        0 0 30px rgba(255, 106, 0, 0.6);
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -39,10 +36,6 @@ body {
     padding: 32px;
     width: 100%;
     max-width: 1000px;
-    box-shadow:
-        0 0 18px rgba(255, 106, 0, 0.6),
-        0 0 50px rgba(255, 106, 0, 0.2),
-        inset 0 0 30px rgba(255, 106, 0, 0.04);
 }
 
 .igralci-vrstica {
@@ -64,7 +57,6 @@ body {
     font-size: 16px;
     font-style: italic;
     font-weight: 900;
-    text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 12px;
 }
@@ -82,9 +74,8 @@ body {
     border: 1px solid #3d1f00;
     border-radius: 6px;
     padding: 10px 12px;
-    color: #f0f0f0;
+    color: #6c6c6c;
     font-size: 16px;
-    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .vnosno-polje::-webkit-inner-spin-button,
@@ -96,14 +87,12 @@ body {
 .vnosno-polje:focus {
     outline: none;
     border-color: #ff6a00;
-    box-shadow: 0 0 8px rgba(255, 106, 0, 0.4);
 }
 
 .nastavitve-naslov {
-    color: #f0f0f0;
+    color: #6c6c6c;
     font-size: 15px;
     font-weight: bold;
-    text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 16px;
 }
@@ -122,19 +111,18 @@ body {
 }
 
 .nastavitev-blok label {
-    color: #f0f0f0;
+    color: #6c6c6c;
     font-size: 14px;
 }
 
 select.vnosno-polje {
     cursor: pointer;
-    background-position: right 16px center;
     padding-right: 40px;
 }
 
 select.vnosno-polje option {
     background-color: #120800;
-    color: #f0f0f0;
+    color: #6c6c6c;
 }
 
 .gumbi-vrstica {
@@ -159,22 +147,16 @@ select.vnosno-polje option {
     font-weight: 900;
     font-style: italic;
     letter-spacing: 1px;
-    text-transform: uppercase;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: background-color 0.15s, transform 0.1s, box-shadow 0.15s;
 }
 
 .gumb:hover {
     background-color: #ff8c00;
-    box-shadow: 0 0 14px rgba(255, 106, 0, 0.6);
 }
 
-.gumb:active {
-    transform: scale(0.98);
-}
 
 
 .napaka {

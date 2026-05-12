@@ -11,10 +11,7 @@
 </head>
 <body>
 
-    <div class="logo-wrapper">
-        <div class="logo-text">DICE RACE</div>
-    </div>
-
+    <div class="logo-text">DICE RACE</div>
 
     <div class="kartica">
 
@@ -40,7 +37,7 @@
                         name="ime1"
                         class="vnosno-polje"
                         maxlength="15"
-                        value="<?php echo isset($_GET['ime1']) ? htmlspecialchars($_GET['ime1']) : ''; ?>"
+                        value="<?php echo isset($_GET['ime1']) ? $_GET['ime1'] : ''; ?>"
                     >
                 </div>
 
@@ -53,7 +50,7 @@
                         name="ime2"
                         class="vnosno-polje"
                         maxlength="15"
-                        value="<?php echo isset($_GET['ime2']) ? htmlspecialchars($_GET['ime2']) : ''; ?>"
+                        value="<?php echo isset($_GET['ime2']) ? $_GET['ime2'] : ''; ?>"
                     >
                 </div>
 
@@ -66,7 +63,7 @@
                         name="ime3"
                         class="vnosno-polje"
                         maxlength="15"
-                        value="<?php echo isset($_GET['ime3']) ? htmlspecialchars($_GET['ime3']) : ''; ?>"
+                        value="<?php echo isset($_GET['ime3']) ? $_GET['ime3'] : ''; ?>"
                     >
                 </div>
 
