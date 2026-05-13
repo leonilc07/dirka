@@ -24,9 +24,7 @@ body {
     font-weight: 900;
     font-style: italic;
     color: #ff6a00;
-    text-shadow: 2px 2px 0px #000, 0 0 30px rgba(255, 106, 0, 0.6);
     letter-spacing: 2px;
-    text-transform: uppercase;
     text-align: center;
     margin-bottom: 12px;
 }
@@ -37,7 +35,6 @@ body {
     color: #999;
     margin-bottom: 20px;
     letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 .runda-info span {
@@ -52,10 +49,6 @@ body {
     padding: 32px;
     width: 100%;
     max-width: 1200px;
-    box-shadow:
-        0 0 18px rgba(255, 106, 0, 0.6),
-        0 0 50px rgba(255, 106, 0, 0.2),
-        inset 0 0 30px rgba(255, 106, 0, 0.04);
 }
 
 .stolpci {
@@ -76,7 +69,6 @@ body {
     font-size: 15px;
     font-weight: 900;
     color: #ff6a00;
-    text-transform: uppercase;
     letter-spacing: 1px;
 }
 
@@ -125,7 +117,6 @@ body {
     width: 100px;
     height: 56px;
     z-index: 2;
-    transition: left 0.8s ease;
 }
 
 .avto img {
@@ -147,7 +138,6 @@ body {
     font-weight: 900;
     font-style: italic;
     color: #ff6a00;
-    text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 8px;
 }
@@ -214,7 +204,6 @@ body {
     font-weight: 900;
     font-style: italic;
     letter-spacing: 1px;
-    text-transform: uppercase;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
@@ -222,12 +211,8 @@ body {
 
 .gumb:hover {
     background-color: #ff8c00;
-    box-shadow: 0 0 14px rgba(255, 106, 0, 0.6);
 }
 
-.gumb:active {
-    transform: scale(0.98);
-}
 
 .gumb.konec {
     background-color: #228833;
@@ -235,5 +220,4 @@ body {
 
 .gumb.konec:hover {
     background-color: #33aa44;
-    box-shadow: 0 0 14px rgba(50, 180, 80, 0.6);
 }

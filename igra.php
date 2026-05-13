@@ -136,7 +136,7 @@ $igra_koncana = ($trenutna_runda > $runde);
                 </div>
 
                 <div class="info-blok">
-                    <div class="ime-igralca"><?php echo htmlspecialchars($ime1); ?></div>
+                    <div class="ime-igralca"><?php echo $ime1; ?></div>
                     <table class="zgodovina">
                         <?php foreach ($_SESSION['zgodovina1'] as $i => $r): ?>
                             <tr>
@@ -245,7 +245,7 @@ $igra_koncana = ($trenutna_runda > $runde);
                 <form action="igra.php" method="POST">
                     <input type="hidden" name="vrzi" value="1">
                     <button type="submit" class="gumb">
-                        Vrzi rundo <?php echo $trenutna_runda; ?>
+                        Vrzi kocke <?php echo $trenutna_runda; ?>
                     </button>
                 </form>
             <?php endif; ?>
