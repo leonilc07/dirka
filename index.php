@@ -31,40 +31,19 @@
                 <div class="igralec-blok">
                     <h3>Igralec 1</h3>
                     <label for="ime1">Ime</label>
-                    <input
-                        type="text"
-                        id="ime1"
-                        name="ime1"
-                        class="vnosno-polje"
-                        maxlength="15"
-                        value="<?php echo isset($_GET['ime1']) ? $_GET['ime1'] : ''; ?>"
-                    >
+                    <input type="text" id="ime1" name="ime1" class="vnosno-polje" maxlength="15" value="">
                 </div>
 
                 <div class="igralec-blok">
                     <h3>Igralec 2</h3>
                     <label for="ime2">Ime</label>
-                    <input
-                        type="text"
-                        id="ime2"
-                        name="ime2"
-                        class="vnosno-polje"
-                        maxlength="15"
-                        value="<?php echo isset($_GET['ime2']) ? $_GET['ime2'] : ''; ?>"
-                    >
+                    <input type="text" id="ime2" name="ime2" class="vnosno-polje" maxlength="15" value="">
                 </div>
 
                 <div class="igralec-blok">
                     <h3>Igralec 3</h3>
                     <label for="ime3">Ime</label>
-                    <input
-                        type="text"
-                        id="ime3"
-                        name="ime3"
-                        class="vnosno-polje"
-                        maxlength="15"
-                        value="<?php echo isset($_GET['ime3']) ? $_GET['ime3'] : ''; ?>"
-                    >
+                    <input type="text" id="ime3" name="ime3" class="vnosno-polje" maxlength="15" value="">
                 </div>
 
             </div>

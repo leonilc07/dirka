@@ -12,40 +12,21 @@ if (isset($_GET['reset'])) {
     exit;
 }
 
-$ime1   = $_SESSION['ime1'];
-$ime2   = $_SESSION['ime2'];
-$ime3   = $_SESSION['ime3'];
-$tocke1 = $_SESSION['tocke1'];
-$tocke2 = $_SESSION['tocke2'];
-$tocke3 = $_SESSION['tocke3'];
-
 $igralci = array(
-    array('ime' => $ime1, 'tocke' => $tocke1, 'avto' => 'car1.png'),
-    array('ime' => $ime2, 'tocke' => $tocke2, 'avto' => 'car2.png'),
-    array('ime' => $ime3, 'tocke' => $tocke3, 'avto' => 'car3.png')
+    array('ime' => $_SESSION['ime1'], 'tocke' => $_SESSION['tocke1'], 'avto' => 'car1.png'),
+    array('ime' => $_SESSION['ime2'], 'tocke' => $_SESSION['tocke2'], 'avto' => 'car2.png'),
+    array('ime' => $_SESSION['ime3'], 'tocke' => $_SESSION['tocke3'], 'avto' => 'car3.png')
 );
 
 usort($igralci, function($a, $b) {
     return $b['tocke'] - $a['tocke'];
 });
 
-
-if ($igralci[0]['tocke'] == $igralci[1]['tocke']) {
-    if (rand(1, 2) == 2) {
-        $temp        = $igralci[0];
-        $igralci[0]  = $igralci[1];
-        $igralci[1]  = $temp;
-    }
+$max = $igralci[0]['tocke'];
+$zmagovalci = array();
+foreach ($igralci as $i) {
+    if ($i['tocke'] == $max) $zmagovalci[] = ($i['ime']);
 }
-
-if ($igralci[1]['tocke'] == $igralci[2]['tocke']) {
-    if (rand(1, 2) == 2) {
-        $temp        = $igralci[1];
-        $igralci[1]  = $igralci[2];
-        $igralci[2]  = $temp;
-    }
-}
-
 
 ?>
 <!DOCTYPE html>
@@ -62,45 +43,50 @@ if ($igralci[1]['tocke'] == $igralci[2]['tocke']) {
 
     <div class="naslov">Rezultati dirke</div>
 
+    <div class="zmagovalec-banner">
+        <?php if (count($zmagovalci) == 1): ?>
+            Zmagovalec: <strong><?php echo $zmagovalci[0]; ?></strong> &mdash; <?php echo $max; ?> pik
+        <?php else: ?>
+            Zmagovalci: <strong><?php echo implode('</strong> in <strong>', $zmagovalci); ?></strong> &mdash; <?php echo $max; ?> pik
+        <?php endif; ?>
+    </div>
+
     <div class="pozicije">
 
         <div class="pozicija mesto-1">
-            <img
-                src="img/<?php echo $igralci[0]['avto']; ?>"
-                alt="Avto"
-                class="avto"
-            >
             <div class="ime"><?php echo htmlspecialchars($igralci[0]['ime']); ?></div>
             <div class="tocke"><?php echo $igralci[0]['tocke']; ?> pik</div>
+            <img src="img/<?php echo $igralci[0]['avto']; ?>" alt="Avto" class="avto">
         </div>
 
         <div class="pozicija mesto-2">
-            <img
-                src="img/<?php echo $igralci[1]['avto']; ?>"
-                alt="Avto"
-                class="avto"
-            >
             <div class="ime"><?php echo htmlspecialchars($igralci[1]['ime']); ?></div>
             <div class="tocke"><?php echo $igralci[1]['tocke']; ?> pik</div>
+            <img src="img/<?php echo $igralci[1]['avto']; ?>" alt="Avto" class="avto">
         </div>
 
         <div class="pozicija mesto-3">
-            <img
-                src="img/<?php echo $igralci[2]['avto']; ?>"
-                alt="Avto"
-                class="avto"
-            >
             <div class="ime"><?php echo htmlspecialchars($igralci[2]['ime']); ?></div>
             <div class="tocke"><?php echo $igralci[2]['tocke']; ?> pik</div>
+            <img src="img/<?php echo $igralci[2]['avto']; ?>" alt="Avto" class="avto">
         </div>
 
     </div>
 
     <div class="gumb-wrapper">
         <a href="rezultati.php?reset=1" class="gumb">Igraj znova</a>
+        <div class="odstevalnik">Preusmeritev čez <span id="cas">10</span> s...</div>
     </div>
 
     <script src="js/petarde.js"></script>
+    <script>
+    var cas = 10;
+    setInterval(function () {
+        cas--;
+        document.getElementById('cas').textContent = cas;
+        if (cas <= 0) window.location.href = 'index.php';
+    }, 1000);
+    </script>
 
 </body>
 </html>

@@ -149,9 +149,16 @@ $igra_koncana = ($trenutna_runda > $runde);
 
                 <div class="kocke-blok">
                     <?php if (count($_SESSION['zadnje_kocke1']) > 0): ?>
-                        <?php foreach ($_SESSION['zadnje_kocke1'] as $v): ?>
-                            <img src="img/dice/dice<?php echo $v; ?>.gif" alt="<?php echo $v; ?>" class="kocka-slika">
-                        <?php endforeach; ?>
+                        <div class="kocke-anim">
+                            <?php for ($i = 0; $i < $kocke; $i++): ?>
+                                <img src="img/dice/dice-anim.gif" alt="met..." class="kocka-slika">
+                            <?php endfor; ?>
+                        </div>
+                        <div class="kocke-rezultat" style="display:none">
+                            <?php foreach ($_SESSION['zadnje_kocke1'] as $v): ?>
+                                <img src="img/dice/dice<?php echo $v; ?>.gif" alt="<?php echo $v; ?>" class="kocka-slika">
+                            <?php endforeach; ?>
+                        </div>
                     <?php else: ?>
                         <div class="kocke-cakanje">Pritisni gumb za met</div>
                     <?php endif; ?>
@@ -187,9 +194,16 @@ $igra_koncana = ($trenutna_runda > $runde);
 
                 <div class="kocke-blok">
                     <?php if (count($_SESSION['zadnje_kocke2']) > 0): ?>
-                        <?php foreach ($_SESSION['zadnje_kocke2'] as $v): ?>
-                            <img src="img/dice/dice<?php echo $v; ?>.gif" alt="<?php echo $v; ?>" class="kocka-slika">
-                        <?php endforeach; ?>
+                        <div class="kocke-anim">
+                            <?php for ($i = 0; $i < $kocke; $i++): ?>
+                                <img src="img/dice/dice-anim.gif" alt="met..." class="kocka-slika">
+                            <?php endfor; ?>
+                        </div>
+                        <div class="kocke-rezultat" style="display:none">
+                            <?php foreach ($_SESSION['zadnje_kocke2'] as $v): ?>
+                                <img src="img/dice/dice<?php echo $v; ?>.gif" alt="<?php echo $v; ?>" class="kocka-slika">
+                            <?php endforeach; ?>
+                        </div>
                     <?php else: ?>
                         <div class="kocke-cakanje">Pritisni gumb za met</div>
                     <?php endif; ?>
@@ -226,9 +240,16 @@ $igra_koncana = ($trenutna_runda > $runde);
 
                 <div class="kocke-blok">
                     <?php if (count($_SESSION['zadnje_kocke3']) > 0): ?>
-                        <?php foreach ($_SESSION['zadnje_kocke3'] as $v): ?>
-                            <img src="img/dice/dice<?php echo $v; ?>.gif" alt="<?php echo $v; ?>" class="kocka-slika">
-                        <?php endforeach; ?>
+                        <div class="kocke-anim">
+                            <?php for ($i = 0; $i < $kocke; $i++): ?>
+                                <img src="img/dice/dice-anim.gif" alt="met..." class="kocka-slika">
+                            <?php endfor; ?>
+                        </div>
+                        <div class="kocke-rezultat" style="display:none">
+                            <?php foreach ($_SESSION['zadnje_kocke3'] as $v): ?>
+                                <img src="img/dice/dice<?php echo $v; ?>.gif" alt="<?php echo $v; ?>" class="kocka-slika">
+                            <?php endforeach; ?>
+                        </div>
                     <?php else: ?>
                         <div class="kocke-cakanje">Pritisni gumb za met</div>
                     <?php endif; ?>
@@ -252,6 +273,19 @@ $igra_koncana = ($trenutna_runda > $runde);
         </div>
 
     </div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var anims = document.querySelectorAll('.kocke-anim');
+    var rezultati = document.querySelectorAll('.kocke-rezultat');
+    if (anims.length === 0) return;
+    setTimeout(function () {
+        anims.forEach(function (a) { a.style.display = 'none'; });
+        rezultati.forEach(function (r) { r.style.display = ''; });
+    }, 1500);
+});
+</script>
 
 </body>
 </html>
