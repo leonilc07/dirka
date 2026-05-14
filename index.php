@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Race</title>
     <link rel="icon" type="image/svg+xml" href="img/icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -57,7 +60,7 @@
                     <label for="kocke">Število kock za vse igralce</label>
                     <select id="kocke" name="kocke" class="vnosno-polje">
                         <?php
-                        for ($i = 1; $i <= 6; $i++) {
+                        for ($i = 1; $i <= 3; $i++) {
                             $izbrano = ($i == 3) ? 'selected' : '';
                             echo '<option value="' . $i . '" ' . $izbrano . '>' . $i . '</option>';
                         }
@@ -66,16 +69,8 @@
                 </div>
 
                 <div class="nastavitev-blok">
-                    <label for="runde">Število rund za vse igralce</label>
-                    <input
-                        type="number"
-                        id="runde"
-                        name="runde"
-                        class="vnosno-polje"
-                        min="1"
-                        max="20"
-                        value="1"
-                    >
+                    <label for="max_tocke">Ciljne točke</label>
+                    <input type="number" id="max_tocke" name="max_tocke" class="vnosno-polje" min="10" max="500" value="50">
                 </div>
 
             </div>
@@ -86,15 +81,13 @@
                     ZAČNI IGRO
                 </button>
 
-                <div class="gumbi-desno">
-                    <span id="vizitka-napis" class="vizitka-napis">VIZITKA</span>
-                </div>
-
             </div>
 
         </form>
 
     </div>
+
+    <span id="vizitka-napis" class="vizitka-napis">VIZITKA</span>
 
     <script src="js/dialogi.js"></script>
 </body>

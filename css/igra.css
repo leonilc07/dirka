@@ -6,11 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #1a0d00;
-    background-image: url('../img/backround.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(145deg, #0a0200 0%, #1a0800 35%, #2d1200 65%, #120600 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -22,7 +18,7 @@ body {
 .naslov {
     font-size: 36px;
     font-weight: 900;
-    font-style: italic;
+    font-style: normal;
     color: #ff6a00;
     letter-spacing: 2px;
     text-align: center;
@@ -79,9 +75,8 @@ body {
 .proga-okvir {
     position: relative;
     height: 90px;
-    background-color: rgba(8, 4, 0, 0.85);
-    border: 1px solid #3d1f00;
-    border-radius: 8px;
+    background: linear-gradient(180deg, #16161c 0%, #0e0e12 100%);
+    border-radius: 6px;
     overflow: hidden;
 }
 
@@ -90,8 +85,23 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 24px;
-    background-color: #ff6a00;
+    height: 38px;
+    background: #252525;
+    border-top: 3px solid #ff6a00;
+}
+
+.cesta::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 24px;
+    height: 2px;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,0.3) 0, rgba(255,255,255,0.3) 14px,
+        transparent 14px, transparent 28px
+    );
 }
 
 .cilj {
@@ -99,31 +109,18 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
-    width: 16px;
-    background: repeating-linear-gradient(
-        180deg,
-        #000 0px,
-        #000 8px,
-        #fff 8px,
-        #fff 16px
-    );
+    width: 20px;
+    background: repeating-conic-gradient(#111 0% 25%, #fff 0% 50%) 0 0 / 10px 10px;
     z-index: 3;
 }
 
 .avto {
     position: absolute;
-    bottom: 20px;
+    bottom: 32px;
     left: 2%;
-    width: 100px;
-    height: 56px;
+    width: 80px;
+    height: 42px;
     z-index: 2;
-}
-
-.avto img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: bottom;
 }
 
 .info-blok {
@@ -214,10 +211,3 @@ body {
 }
 
 
-.gumb.konec {
-    background-color: #228833;
-}
-
-.gumb.konec:hover {
-    background-color: #33aa44;
-}

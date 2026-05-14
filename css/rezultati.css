@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -7,13 +6,14 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #0a0500;
-    background-image: url('../img/background_rezultati.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background: linear-gradient(145deg, #0a0200 0%, #1a0800 35%, #2d1200 65%, #120600 100%);
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
@@ -24,100 +24,120 @@ body {
     width: 100%;
     height: 100%;
     z-index: 10;
+    pointer-events: none;
 }
 
 .naslov {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 900;
-    font-style: italic;
+    font-style: normal;
     color: #ff6a00;
     letter-spacing: 3px;
+    text-align: center;
     z-index: 20;
+    margin-bottom: 48px;
 }
 
+/* ── Podium ── */
 
-.odstevalnik {
-    font-size: 13px;
-    color: #aaa;
-}
-
-.pozicije {
-    position: absolute;
-    top: 0;
-    left: 0;
+.podium {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
     width: 100%;
-    height: 100%;
+    max-width: 600px;
+    padding: 0 24px;
     z-index: 20;
 }
 
-.pozicija {
-    position: absolute;
+.podium-kolona {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
 }
 
-.pozicija img.avto {
-    width: 130px;
+.podium-avto {
+    margin-bottom: 10px;
 }
 
-.pozicija .ime {
-    font-size: 20px;
+/* Stopnice */
+
+.stopnica {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 12px 14px;
+    border-radius: 8px 8px 0 0;
+}
+
+.stopnica-1 {
+    height: 210px;
+    background: #ff6a00;
+}
+
+.stopnica-2 {
+    height: 150px;
+    background: #b84d00;
+}
+
+.stopnica-3 {
+    height: 108px;
+    background: #7a3200;
+}
+
+/* Vsebina znotraj stopničke */
+
+.st-vsebina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.st-ime {
+    font-size: 16px;
     font-weight: 900;
-    font-style: italic;
-    color: #ffffff;
-    letter-spacing: 1px;
-    white-space: nowrap;
-}
-
-.pozicija .tocke {
-    font-size: 15px;
-    font-weight: 900;
-    color: #ff6a00;
-    white-space: nowrap;
-}
-
-.mesto-1 {
-    left: 45%;
-    bottom: 40%;
-}
-
-.mesto-1 img.avto {
-    width: 150px;
-}
-
-.mesto-1 .ime {
-    font-size: 24px;
-    color: #ffcc00;
-}
-
-.mesto-1 .tocke {
-    font-size: 17px;
-    color: #ffcc00;
-}
-
-.mesto-2 {
-    left: 26%;
-    bottom: 29%;
-}
-
-.mesto-3 {
-    left: 67%;
-    bottom: 26%;
-}
-
-.gumb-wrapper {
-    position: absolute;
-    bottom: 24px;
-    left: 0;
-    right: 0;
+    font-style: normal;
+    color: #fff;
     text-align: center;
-    z-index: 20;
+    letter-spacing: 1px;
+    word-break: break-word;
 }
 
+.st-tocke {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.65);
+    text-align: center;
+}
+
+/* 1. mesto poudari */
+.stopnica-1 .st-ime {
+    font-size: 21px;
+    color: #ffcc00;
+}
+
+.stopnica-1 .st-tocke {
+    font-size: 15px;
+    color: rgba(255, 204, 0, 0.75);
+}
+
+/* Številka na dnu */
+.st-stevilka {
+    font-size: 34px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.18);
+    line-height: 1;
+}
+
+/* Odštevalnik */
+.odstevalnik {
+    font-size: 12px;
+    color: #3a3a3a;
+    letter-spacing: 2px;
+    z-index: 20;
+    margin-top: 28px;
+}

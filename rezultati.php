@@ -13,21 +13,25 @@ if (isset($_GET['reset'])) {
 }
 
 $igralci = array(
-    array('ime' => $_SESSION['ime1'], 'tocke' => $_SESSION['tocke1'], 'avto' => 'car1.png'),
-    array('ime' => $_SESSION['ime2'], 'tocke' => $_SESSION['tocke2'], 'avto' => 'car2.png'),
-    array('ime' => $_SESSION['ime3'], 'tocke' => $_SESSION['tocke3'], 'avto' => 'car3.png')
+    array('ime' => $_SESSION['ime1'], 'tocke' => $_SESSION['tocke1'], 'barva' => '#ff3333'),
+    array('ime' => $_SESSION['ime2'], 'tocke' => $_SESSION['tocke2'], 'barva' => '#4488ff'),
+    array('ime' => $_SESSION['ime3'], 'tocke' => $_SESSION['tocke3'], 'barva' => '#ffcc00'),
 );
 
 usort($igralci, function($a, $b) {
     return $b['tocke'] - $a['tocke'];
 });
 
-$max = $igralci[0]['tocke'];
-$zmagovalci = array();
-foreach ($igralci as $i) {
-    if ($i['tocke'] == $max) $zmagovalci[] = ($i['ime']);
+function avto_svg($barva, $sirina) {
+    return '<svg viewBox="0 0 80 42" xmlns="http://www.w3.org/2000/svg" width="' . $sirina . '" style="display:block;margin:0 auto">
+        <rect x="2" y="20" width="76" height="14" rx="3" fill="' . $barva . '"/>
+        <rect x="20" y="8" width="36" height="14" rx="4" fill="' . $barva . '" opacity="0.7"/>
+        <rect x="23" y="10" width="14" height="10" rx="2" fill="rgba(200,235,255,0.5)"/>
+        <rect x="40" y="10" width="14" height="10" rx="2" fill="rgba(200,235,255,0.5)"/>
+        <circle cx="18" cy="34" r="7" fill="#111"/>
+        <circle cx="62" cy="34" r="7" fill="#111"/>
+    </svg>';
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="sl">
@@ -44,32 +48,53 @@ foreach ($igralci as $i) {
 
     <div class="naslov">Rezultati dirke</div>
 
+    <div class="podium">
 
-    <div class="pozicije">
-
-        <div class="pozicija mesto-1">
-            <div class="ime"><?php echo htmlspecialchars($igralci[0]['ime']); ?></div>
-            <div class="tocke"><?php echo $igralci[0]['tocke']; ?> pik</div>
-            <img src="img/<?php echo $igralci[0]['avto']; ?>" alt="Avto" class="avto">
+        <!-- 2. mesto — levo -->
+        <div class="podium-kolona">
+            <div class="podium-avto">
+                <?php echo avto_svg($igralci[1]['barva'], 80); ?>
+            </div>
+            <div class="stopnica stopnica-2">
+                <div class="st-vsebina">
+                    <div class="st-ime"><?php echo htmlspecialchars($igralci[1]['ime']); ?></div>
+                    <div class="st-tocke"><?php echo $igralci[1]['tocke']; ?> pik</div>
+                </div>
+                <div class="st-stevilka">2</div>
+            </div>
         </div>
 
-        <div class="pozicija mesto-2">
-            <div class="ime"><?php echo htmlspecialchars($igralci[1]['ime']); ?></div>
-            <div class="tocke"><?php echo $igralci[1]['tocke']; ?> pik</div>
-            <img src="img/<?php echo $igralci[1]['avto']; ?>" alt="Avto" class="avto">
+        <!-- 1. mesto — sredina -->
+        <div class="podium-kolona">
+            <div class="podium-avto">
+                <?php echo avto_svg($igralci[0]['barva'], 100); ?>
+            </div>
+            <div class="stopnica stopnica-1">
+                <div class="st-vsebina">
+                    <div class="st-ime"><?php echo htmlspecialchars($igralci[0]['ime']); ?></div>
+                    <div class="st-tocke"><?php echo $igralci[0]['tocke']; ?> pik</div>
+                </div>
+                <div class="st-stevilka">1</div>
+            </div>
         </div>
 
-        <div class="pozicija mesto-3">
-            <div class="ime"><?php echo htmlspecialchars($igralci[2]['ime']); ?></div>
-            <div class="tocke"><?php echo $igralci[2]['tocke']; ?> pik</div>
-            <img src="img/<?php echo $igralci[2]['avto']; ?>" alt="Avto" class="avto">
+        <!-- 3. mesto — desno -->
+        <div class="podium-kolona">
+            <div class="podium-avto">
+                <?php echo avto_svg($igralci[2]['barva'], 80); ?>
+            </div>
+            <div class="stopnica stopnica-3">
+                <div class="st-vsebina">
+                    <div class="st-ime"><?php echo htmlspecialchars($igralci[2]['ime']); ?></div>
+                    <div class="st-tocke"><?php echo $igralci[2]['tocke']; ?> pik</div>
+                </div>
+                <div class="st-stevilka">3</div>
+            </div>
         </div>
 
     </div>
 
-    <div class="gumb-wrapper">
-        <div class="odstevalnik">Preusmeritev čez <span id="cas">10</span> s...</div>
-    </div>
+    <div class="odstevalnik">Preusmeritev čez <span id="cas">10</span> s...</div>
 
     <script src="js/petarde.js"></script>
     <script>

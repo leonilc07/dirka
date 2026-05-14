@@ -6,11 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #1a0d00;
-    background-image: url('../img/backround.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(145deg, #0a0200 0%, #1a0800 35%, #2d1200 65%, #120600 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,13 +17,16 @@ body {
 
 
 .logo-text {
-    font-size: 48px;
-    font-weight: 900;
-    font-style: italic;
+    font-family: 'Racing Sans One', cursive;
+    font-size: 64px;
+    font-weight: 400;
+    font-style: normal;
     color: #ff6a00;
-    letter-spacing: 2px;
-    margin-bottom: 50px;
+    letter-spacing: 6px;
+    text-shadow: 0 0 30px rgba(255, 106, 0, 0.4), 2px 2px 0 rgba(0,0,0,0.6);
+    margin-bottom: 36px;
     cursor: pointer;
+    text-align: center;
 }
 
 .kartica {
@@ -56,7 +55,7 @@ body {
 .igralec-blok h3 {
     color: #ff6a00;
     font-size: 16px;
-    font-style: italic;
+    font-style: normal;
     font-weight: 900;
     letter-spacing: 1px;
     margin-bottom: 12px;
@@ -128,14 +127,9 @@ select.vnosno-polje option {
 
 .gumbi-vrstica {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 16px;
-}
-
-.gumbi-desno {
-    display: flex;
-    gap: 12px;
 }
 
 .gumb {
@@ -172,10 +166,11 @@ select.vnosno-polje option {
 }
 
 .vizitka-napis {
-    color: #6c6c6c;
-    font-size: 14px;
+    color: #3a3a3a;
+    font-size: 11px;
     cursor: pointer;
-    align-self: center;
+    margin-top: 20px;
+    letter-spacing: 2px;
 }
 
 .vizitka-napis:hover {
@@ -185,6 +180,5 @@ select.vnosno-polje option {
 @media (max-width: 700px) {
     .igralci-vrstica { flex-direction: column; }
     .nastavitve-vrstica { grid-template-columns: 1fr; }
-    .gumbi-vrstica { flex-direction: column; align-items: stretch; }
-    .gumbi-desno { justify-content: center; }
+    .gumbi-vrstica { flex-direction: column; align-items: center; }
 }
