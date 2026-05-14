@@ -101,6 +101,7 @@ $igra_koncana = ($trenutna_runda > $runde);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Race — Dirka</title>
+    <link rel="icon" type="image/svg+xml" href="img/icon.svg">
     <link rel="stylesheet" href="css/igra.css">
 </head>
 <body>

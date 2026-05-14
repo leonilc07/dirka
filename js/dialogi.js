@@ -1,4 +1,4 @@
-document.getElementById('gumb-navodila').addEventListener('click', function() {
+document.getElementById('naslov-igre').addEventListener('click', function() {
     Swal.fire({
         title: 'Navodila',
         html: `
@@ -19,7 +19,7 @@ document.getElementById('gumb-navodila').addEventListener('click', function() {
     });
 });
 
-document.getElementById('gumb-krediti').addEventListener('click', function() {
+document.getElementById('vizitka-napis').addEventListener('click', function() {
     Swal.fire({
         title: 'Vizitka',
         html: `

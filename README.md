@@ -43,20 +43,26 @@ dirka/
 │   ├── igra.css            ← Stil za igra.php
 │   └── rezultati.css       ← Stil za rezultati.php
 │
+├── js/
+│   ├── dialogi.js          ← SweetAlert2 dialogi
+│   └── petarde.js          ← Konfeti animacija
+│
 └── img/
+    ├── icon.svg                ← Ikona zavihka (favicon)
     ├── backround.png           ← Ozadje (stran 1 in 2)
     ├── background_rezultati.png ← Ozadje (stran 3)
     ├── car1.png                ← Avto igralca 1
     ├── car2.png                ← Avto igralca 2
     ├── car3.png                ← Avto igralca 3
     └── dice/
+        ├── dice.gif            ← Animacija metanja kocke
+        ├── dice-anim.gif       ← Alternativna animacija
         ├── dice1.gif
         ├── dice2.gif
         ├── dice3.gif
         ├── dice4.gif
         ├── dice5.gif
         └── dice6.gif
-        └── dice-anim.gif
 ```
 
 ---
@@ -105,7 +111,7 @@ Podatki se prenašajo med stranmi z PHP sejami (`$_SESSION`). Seja se ustvari na
 | PHP | Logika igre, seje, met kock |
 | HTML | Struktura strani |
 | CSS | Oblikovanje (Hot Wheels stil) |
-| JavaScript | sweetalert,  konfeti |
+| JavaScript | SweetAlert2 dialogi, konfeti animacija |
 
 ---
 

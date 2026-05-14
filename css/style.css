@@ -27,6 +27,7 @@ body {
     color: #ff6a00;
     letter-spacing: 2px;
     margin-bottom: 50px;
+    cursor: pointer;
 }
 
 .kartica {
@@ -170,10 +171,20 @@ select.vnosno-polje option {
     text-align: center;
 }
 
+.vizitka-napis {
+    color: #6c6c6c;
+    font-size: 14px;
+    cursor: pointer;
+    align-self: center;
+}
+
+.vizitka-napis:hover {
+    color: #ff6a00;
+}
+
 @media (max-width: 700px) {
     .igralci-vrstica { flex-direction: column; }
     .nastavitve-vrstica { grid-template-columns: 1fr; }
     .gumbi-vrstica { flex-direction: column; align-items: stretch; }
-    .gumbi-desno { justify-content: stretch; }
-    .gumbi-desno .gumb { flex: 1; justify-content: center; }
+    .gumbi-desno { justify-content: center; }
 }

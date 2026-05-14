@@ -40,21 +40,8 @@ body {
     z-index: 20;
 }
 
-.zmagovalec-banner {
-    position: absolute;
-    top: 72px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 900;
-    color: #ffcc00;
-    z-index: 20;
-    letter-spacing: 1px;
-}
 
 .odstevalnik {
-    margin-top: 10px;
     font-size: 13px;
     color: #aaa;
 }
@@ -134,21 +121,3 @@ body {
     z-index: 20;
 }
 
-.gumb {
-    background-color: #ff6a00;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 14px 48px;
-    font-size: 16px;
-    font-weight: 900;
-    font-style: italic;
-    letter-spacing: 1px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.gumb:hover {
-    background-color: #ff8c00;
-}

@@ -6,12 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Race</title>
+    <link rel="icon" type="image/svg+xml" href="img/icon.svg">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
-    <div class="logo-text">DICE RACE</div>
+    <div class="logo-text" id="naslov-igre">DICE RACE</div>
 
     <div class="kartica">
 
@@ -86,12 +87,7 @@
                 </button>
 
                 <div class="gumbi-desno">
-                    <button type="button" id="gumb-navodila" class="gumb">
-                        NAVODILA
-                    </button>
-                    <button type="button" id="gumb-krediti" class="gumb">
-                        VIZITKA
-                    </button>
+                    <span id="vizitka-napis" class="vizitka-napis">VIZITKA</span>
                 </div>
 
             </div>

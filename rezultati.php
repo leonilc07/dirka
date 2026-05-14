@@ -35,6 +35,7 @@ foreach ($igralci as $i) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Race — Rezultati</title>
+    <link rel="icon" type="image/svg+xml" href="img/icon.svg">
     <link rel="stylesheet" href="css/rezultati.css">
 </head>
 <body>
@@ -43,13 +44,6 @@ foreach ($igralci as $i) {
 
     <div class="naslov">Rezultati dirke</div>
 
-    <div class="zmagovalec-banner">
-        <?php if (count($zmagovalci) == 1): ?>
-            Zmagovalec: <strong><?php echo $zmagovalci[0]; ?></strong> &mdash; <?php echo $max; ?> pik
-        <?php else: ?>
-            Zmagovalci: <strong><?php echo implode('</strong> in <strong>', $zmagovalci); ?></strong> &mdash; <?php echo $max; ?> pik
-        <?php endif; ?>
-    </div>
 
     <div class="pozicije">
 
@@ -74,7 +68,6 @@ foreach ($igralci as $i) {
     </div>
 
     <div class="gumb-wrapper">
-        <a href="rezultati.php?reset=1" class="gumb">Igraj znova</a>
         <div class="odstevalnik">Preusmeritev čez <span id="cas">10</span> s...</div>
     </div>
 
