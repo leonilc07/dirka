@@ -1,0 +1,123 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a0500;
+    background-image: url('../img/background_rezultati.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#petarde {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.naslov {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 900;
+    font-style: italic;
+    color: #ff6a00;
+    letter-spacing: 3px;
+    z-index: 20;
+}
+
+
+.odstevalnik {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.pozicije {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+
+.pozicija {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.pozicija img.avto {
+    width: 130px;
+}
+
+.pozicija .ime {
+    font-size: 20px;
+    font-weight: 900;
+    font-style: italic;
+    color: #ffffff;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.pozicija .tocke {
+    font-size: 15px;
+    font-weight: 900;
+    color: #ff6a00;
+    white-space: nowrap;
+}
+
+.mesto-1 {
+    left: 45%;
+    bottom: 40%;
+}
+
+.mesto-1 img.avto {
+    width: 150px;
+}
+
+.mesto-1 .ime {
+    font-size: 24px;
+    color: #ffcc00;
+}
+
+.mesto-1 .tocke {
+    font-size: 17px;
+    color: #ffcc00;
+}
+
+.mesto-2 {
+    left: 26%;
+    bottom: 28%;
+}
+
+.mesto-3 {
+    left: 67%;
+    bottom: 26%;
+}
+
+.gumb-wrapper {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 20;
+}
+

@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a0d00;
+    background-image: url('../img/backround.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+}
+
+.naslov {
+    font-size: 36px;
+    font-weight: 900;
+    font-style: italic;
+    color: #ff6a00;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.runda-info {
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.runda-info span {
+    color: #ff6a00;
+    font-weight: bold;
+}
+
+.kartica {
+    background-color: rgba(15, 8, 0, 0.93);
+    border: 2px solid #ff6a00;
+    border-radius: 10px;
+    padding: 32px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.stolpci {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.stolpec {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skupne-tocke {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 900;
+    color: #ff6a00;
+    letter-spacing: 1px;
+}
+
+.skupne-tocke span {
+    color: #ffffff;
+}
+
+.proga-okvir {
+    position: relative;
+    height: 90px;
+    background-color: rgba(8, 4, 0, 0.85);
+    border: 1px solid #3d1f00;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cesta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background-color: #ff6a00;
+}
+
+.cilj {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    background: repeating-linear-gradient(
+        180deg,
+        #000 0px,
+        #000 8px,
+        #fff 8px,
+        #fff 16px
+    );
+    z-index: 3;
+}
+
+.avto {
+    position: absolute;
+    bottom: 20px;
+    left: 2%;
+    width: 100px;
+    height: 56px;
+    z-index: 2;
+}
+
+.avto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+.info-blok {
+    background-color: rgba(8, 4, 0, 0.85);
+    border: 1px solid #3d1f00;
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.ime-igralca {
+    font-size: 16px;
+    font-weight: 900;
+    font-style: italic;
+    color: #ff6a00;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.zgodovina {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.zgodovina tr td {
+    font-size: 13px;
+    color: #cccccc;
+    padding: 3px 0;
+    border-bottom: 1px solid #1a0d00;
+}
+
+.zgodovina tr td:first-child {
+    color: #999;
+    width: 70px;
+}
+
+.zgodovina tr td:last-child {
+    color: #ff6a00;
+    font-weight: bold;
+    text-align: right;
+}
+
+.kocke-blok {
+    background-color: #000000;
+    border: 2px solid #3d1f00;
+    border-radius: 8px;
+    padding: 16px;
+    min-height: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.kocka-slika {
+    width: 56px;
+    height: 56px;
+}
+.kocke-cakanje {
+    font-size: 13px;
+    color: #444;
+    text-align: center;
+}
+
+.gumb-vrstica {
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.gumb {
+    background-color: #ff6a00;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 48px;
+    font-size: 16px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.gumb:hover {
+    background-color: #ff8c00;
+}
+
+
+.gumb.konec {
+    background-color: #228833;
+}
+
+.gumb.konec:hover {
+    background-color: #33aa44;
+}
