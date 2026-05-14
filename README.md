@@ -56,6 +56,7 @@ dirka/
         ├── dice4.gif
         ├── dice5.gif
         └── dice6.gif
+        └── dice-anim.gif
 ```
 
 ---
